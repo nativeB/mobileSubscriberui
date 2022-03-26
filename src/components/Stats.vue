@@ -5,7 +5,9 @@
     <div class="stats">
       <span>
         <p class="prepaid scnd-font-color">Prepaid</p>
-        <p class="percentage">{{prepaid}} ({{ prepaidPercentage }})<sup>%</sup></p>
+        <p class="percentage">
+          {{ prepaid }} ({{ prepaidPercentage }})<sup>%</sup>
+        </p>
       </span>
 
       <span class="total">
@@ -14,7 +16,9 @@
       </span>
       <span>
         <p class="prepaid scnd-font-color">Postpaid</p>
-        <p class="percentage">{{postpaid}} ({{ postpaidPercentage }})<sup>%</sup></p>
+        <p class="percentage">
+          {{ postpaid }} ({{ postpaidPercentage }})<sup>%</sup>
+        </p>
       </span>
     </div>
   </div>

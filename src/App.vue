@@ -9,9 +9,8 @@
   </div>
   <router-view />
   <footer>
-  <div class="container">
-    <p>&copy; 2022 https://github.com/nativeB</p>
-  </div>
-  
-</footer>
+    <div class="container">
+      <p>&copy; 2022 https://github.com/nativeB</p>
+    </div>
+  </footer>
 </template>

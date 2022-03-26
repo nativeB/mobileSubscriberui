@@ -19,7 +19,9 @@
     </template>
     <template v-slot:actions="data">
       <div>
-         <router-link :to="`/subscribers/edit/${data.value._id}`">Edit</router-link>
+        <router-link :to="`/subscribers/edit/${data.value._id}`"
+          >Edit</router-link
+        >
       </div>
     </template>
   </table-lite>
@@ -30,12 +32,23 @@ import { defineComponent } from "vue";
 import TableLite from "vue3-table-lite/ts";
 import { mapState, mapActions } from "vuex";
 interface IData {
-  data: any[];
+  columns: {
+    label: string;
+    field: string;
+    width: string;
+    sortable: boolean;
+    isKey?: boolean;
+  }[];
+  isLoading: boolean;
+  sortable: {
+    order: string;
+    sort: string;
+  };
 }
 export default defineComponent({
   name: "ListSubscribers",
   components: { TableLite },
-  data(): any {
+  data(): IData {
     return {
       isLoading: false,
       columns: [
@@ -112,7 +125,7 @@ export default defineComponent({
     },
   },
   async mounted() {
-    await this.doSearch(  0, 10, "serviceStartDate", "desc" );
+    await this.doSearch("0", "10", "serviceStartDate", "desc");
   },
 });
 </script>

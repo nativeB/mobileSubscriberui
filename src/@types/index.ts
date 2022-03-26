@@ -6,11 +6,11 @@ export interface IStoreState {
     totalRecords: number;
     prepaidRecords: number;
     postpaidRecords: number;
-  }
+  };
 }
 
 export interface ISubscriber {
-  _id: string,
+  _id: string;
   id: number;
   msisdn: string;
   customerIdOwner: number;

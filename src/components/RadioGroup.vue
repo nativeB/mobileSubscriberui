@@ -38,7 +38,7 @@ export default defineComponent({
       type: Boolean,
       default: true,
     },
-     value: {
+    value: {
       type: String,
       default: "",
     },
@@ -55,7 +55,6 @@ export default defineComponent({
         this.input = value;
       },
     },
-
   },
 });
 </script>

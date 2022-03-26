@@ -44,7 +44,7 @@ export default defineComponent({
       handler(value: string): void {
         this.input = value;
       },
-    }
+    },
   },
 });
 </script>

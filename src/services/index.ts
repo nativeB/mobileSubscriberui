@@ -1,6 +1,6 @@
 import { IStoreState, ISubscriber } from "@/@types";
 import axios from "axios";
-console.log(process.env)
+console.log(process.env);
 const instance = axios.create({
   baseURL: process.env.VUE_APP_SERVER_URL,
   timeout: 1000,
