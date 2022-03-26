@@ -1,18 +1,31 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+    <Stats
+      :total="statistics.totalRecords"
+      :prepaid="statistics.prepaidRecords"
+      :postpaid="statistics.postpaidRecords"
+    />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
+import Stats from "@/components/Stats.vue"; // @ is an alias to /src
+import { mapActions, mapState } from "vuex";
 
 export default defineComponent({
   name: "Home",
   components: {
-    HelloWorld,
+    Stats,
+  },
+  computed: {
+    ...mapState(["statistics"]),
+  },
+  methods: {
+    ...mapActions(["getSubscribers"]),
+  },
+  created() {
+    this.getSubscribers({ query: { __limit: 1, __skip: 0 } });
   },
 });
 </script>
