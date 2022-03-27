@@ -33,22 +33,27 @@ export default defineComponent({
     total: {
       type: Number,
       required: true,
+      default: 0,
     },
     prepaid: {
       type: Number,
       required: true,
+      default: 0,
     },
     postpaid: {
       type: Number,
       required: true,
+      default: 0,
     },
   },
   computed: {
     prepaidPercentage(): string {
-      return ((this.prepaid / this.total) * 100).toFixed(0);
+      const share = this.prepaid / this.total || 0;
+      return (share * 100).toFixed(0);
     },
     postpaidPercentage(): string {
-      return ((this.postpaid / this.total) * 100).toFixed(0);
+      const share = this.postpaid / this.total || 0;
+      return (share * 100).toFixed(0);
     },
   },
 });
