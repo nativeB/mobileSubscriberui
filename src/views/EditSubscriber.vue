@@ -34,8 +34,8 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import Input from "@/components/Input.vue"; // @ is an alias to /src
-import RadioGroup from "@/components/RadioGroup.vue"; // @ is an alias to /src
+import Input from "@/components/Input.vue";
+import RadioGroup from "@/components/RadioGroup.vue";
 import { mapActions, mapMutations, mapState, mapGetters } from "vuex";
 import { cloneDeep, get } from "lodash-es";
 import { ISubscriber } from "@/@types";

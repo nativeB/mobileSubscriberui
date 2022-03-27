@@ -25,7 +25,7 @@ export function updateOneSubscriber(
 export function deleteOneSubscriber(
   subscriberId: string
 ): Promise<ISubscriber> {
-  return instance.put(`/subscribers/${subscriberId}`);
+  return instance.delete(`/subscribers/${subscriberId}`);
 }
 export function createOneSubscriber(
   data: IStoreState["editing"]

@@ -38,6 +38,17 @@ export async function updateSubscriber(
   }
   return data;
 }
+export async function deleteSubscriber(
+  context: any,
+  { subscriberId }: any
+): Promise<ISubscriber[]> {
+  const response = await services.deleteOneSubscriber(subscriberId);
+  const data = get(response, "data", {});
+  if (data.success) {
+    context.commit("removeSubscriber", data.subscriber);
+  }
+  return data;
+}
 export async function createSubscriber(
   context: any,
   { update }: any

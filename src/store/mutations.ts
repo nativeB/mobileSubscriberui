@@ -31,6 +31,15 @@ export function setSubscriber(state: IStoreState, data: ISubscriber): void {
     subscribers.push(data);
   }
 }
+export function removeSubscriber(state: IStoreState, data: ISubscriber): void {
+  const subscribers: ISubscriber[] = state.subscribers;
+  const index = subscribers.findIndex(
+    (subscriber) => subscriber._id === data._id
+  );
+  if (index > -1) {
+    subscribers.splice(index, 1);
+  }
+}
 export function setTotalRecords(state: IStoreState, data: number): void {
   state.totalRecords = data;
 }
